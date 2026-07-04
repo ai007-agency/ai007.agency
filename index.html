@@ -33,13 +33,13 @@
   .slide{position:absolute;inset:0;z-index:3;display:none;flex-direction:column;justify-content:center;padding:0 64px}
   .slide.active{display:flex;animation:sin .5s ease}
   @keyframes sin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-  h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.05;font-size:42px;max-width:940px}
+  h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.05;font-size:clamp(30px,3.6vw,42px);max-width:940px}
   .kick{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:14px}
   .kick .d{width:7px;height:7px;border-radius:50%;background:var(--purple)}
 
-  .ghost{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:160px;line-height:.88;letter-spacing:-.03em;color:var(--ghost);transition:color .6s;margin-left:-6px}
+  .ghost{font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(96px,13.6vw,160px);line-height:.88;letter-spacing:-.03em;color:var(--ghost);transition:color .6s;margin-left:-6px}
   .ghost .dot{display:inline-block;width:.12em;height:.12em;border-radius:50%;background:var(--purple);vertical-align:baseline;margin-left:.03em}
-  .lead{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:30px;letter-spacing:-.01em;margin-top:14px;max-width:660px;line-height:1.12}
+  .lead{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.01em;margin-top:14px;max-width:660px;line-height:1.12}
   .csub{font-size:17px;color:var(--sub);margin-top:14px;max-width:520px;line-height:1.5}
 
   .cards{display:grid;gap:14px;margin-top:24px}
@@ -63,7 +63,7 @@
   .slide.tri{padding:0;justify-content:flex-start}
   .trihdr{padding:78px 64px 44px}
   .trihdr .kick{margin-bottom:12px}
-  .trihdr h2{font-size:34px;max-width:880px;line-height:1.08}
+  .trihdr h2{font-size:clamp(26px,2.9vw,34px);max-width:880px;line-height:1.08}
   .tricols{flex:1;display:grid;grid-template-columns:1fr 1fr 1fr}
   .tcol{background:var(--cbg);color:var(--cfg);padding:40px 40px 150px;display:flex;flex-direction:column;justify-content:flex-end}
   .tcol .tn{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:30px;opacity:.5;margin-bottom:14px}
@@ -98,7 +98,7 @@
   .slide.hub{padding:0}
   .slide.hub.active{display:grid;grid-template-columns:1fr 1fr}
   .hleft{padding:52px 40px 52px 64px;display:flex;flex-direction:column;justify-content:center}
-  .hleft h2{font-size:31px;max-width:400px;margin-bottom:18px}
+  .hleft h2{font-size:clamp(24px,2.6vw,31px);max-width:400px;margin-bottom:18px}
   .hpt{border-top:1px solid var(--line);padding-top:10px;margin-bottom:12px}
   .hpt .pn{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:14px;margin-bottom:3px;color:var(--ink)}
   .hpt .pd{font-size:12px;color:var(--sub);line-height:1.4}
@@ -143,7 +143,7 @@
   .pp .ro{color:var(--purple);font-size:12px;font-family:'JetBrains Mono',monospace;letter-spacing:.06em;margin:3px 0 8px}
   .pp .t{font-size:12.5px;color:var(--sub);line-height:1.45}
   .slide.s9{padding:52px 64px 48px;justify-content:center}
-  .slide.s9 h2{font-size:32px;max-width:840px}
+  .slide.s9 h2{font-size:clamp(24px,2.7vw,32px);max-width:840px}
   .slide.s9 .pteam{margin-top:14px}
   .slide.s9 .pp .ph{aspect-ratio:5/4}
   .slide.s9 .pp .pin{padding:14px 18px}
@@ -151,7 +151,7 @@
   .slide.s9 .pp .ro{margin:2px 0 6px}
   .slide.s9 .pp .t{font-size:12px;line-height:1.4}
   .slide.s9 .quote{font-size:15px;margin-top:12px}
-  .slide.fin .ghost10{position:absolute;right:-6px;bottom:-52px;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:290px;line-height:.7;color:var(--ghost);transition:color .6s;z-index:1;pointer-events:none}
+  .slide.fin .ghost10{position:absolute;right:-6px;bottom:-52px;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(170px,24.6vw,290px);line-height:.7;color:var(--ghost);transition:color .6s;z-index:1;pointer-events:none}
   .slide.fin .inner{position:relative;z-index:3}
 
   .team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
@@ -177,10 +177,74 @@
   .dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:.2s}
   .dot.on{background:var(--purple);width:22px;border-radius:6px}
   .nav .count{color:#8f7bd6;font-family:'JetBrains Mono',monospace;font-size:12px;min-width:56px;text-align:center}
+  .hint-m{display:none}
+
+  /* ===== мобильная версия ===== */
+  @media (max-width:900px){
+    body{padding:14px 10px 26px;gap:12px}
+    .topcap{font-size:10px;line-height:1.5;padding:0 8px}
+    .hint-d{display:none}
+    .hint-m{display:inline}
+    .frame{aspect-ratio:auto;height:calc(100vh - 150px);height:calc(100dvh - 150px);min-height:460px;border-radius:14px}
+    .wm{top:14px;left:18px;font-size:16px}
+    .tg{top:14px;right:16px}
+    .foot{left:18px;right:18px;bottom:12px;font-size:10px}
+    .slide.active{display:block;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:54px 20px 60px}
+    h2{font-size:25px;line-height:1.12}
+    .kick{font-size:10px;margin-bottom:10px}
+    .ghost{font-size:clamp(56px,17vw,92px)}
+    .lead{font-size:20px;margin-top:12px}
+    .csub{font-size:14.5px}
+    .cards{gap:10px;margin-top:18px}
+    .g2,.g3{grid-template-columns:1fr}
+    .card{padding:16px}
+    .card p{font-size:15px}
+    .trihdr{padding:0 0 16px}
+    .trihdr h2{font-size:21px}
+    .tricols{grid-template-columns:1fr;gap:10px}
+    .tcol{padding:16px;border-radius:12px;justify-content:flex-start}
+    .tcol .tn{font-size:22px;margin-bottom:8px}
+    .tcol p{font-size:14px}
+    .ccards{grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+    .cc{padding:16px 14px}
+    .cc .ch{font-size:18px}
+    .cc .cp{font-size:12.5px}
+    .promise{grid-template-columns:1fr;gap:8px;margin-top:18px;font-size:13px}
+    .spec{margin-top:14px}
+    .sr{grid-template-columns:1fr;gap:5px;padding:12px 0 12px 14px}
+    .sr .sk{font-size:16px}
+    .sr .sv{font-size:13px}
+    .slide.hub.active{display:block}
+    .hdiv{display:none}
+    .hleft{padding:0 0 6px}
+    .hleft h2{font-size:22px;max-width:none;margin-bottom:14px}
+    .hright{padding:0;margin-top:10px}
+    .screen{border-width:6px;border-radius:12px;margin-top:12px}
+    .scr-in{grid-template-columns:1fr;grid-template-rows:none}
+    .q{padding:16px}
+    .q .qt{font-size:16px}
+    .q .qd{font-size:12.5px}
+    .pcards{grid-template-columns:1fr;gap:12px;margin-top:16px}
+    .pc .ph{aspect-ratio:16/9}
+    .pteam{grid-template-columns:1fr;gap:12px;margin-top:16px}
+    .pp .ph{aspect-ratio:16/10}
+    .slide.s9 h2{font-size:22px}
+    .slide.s9 .pp .ph{aspect-ratio:16/10}
+    .quote{font-size:15px;margin-top:16px}
+    .slide.fin .ghost10{font-size:130px;right:-4px;bottom:-18px}
+    .ctarow{flex-wrap:wrap;gap:16px;margin-top:18px}
+    .qr{width:124px;padding:10px}
+    .qr svg{width:100px;height:100px}
+    .contact{font-size:14px;line-height:1.7}
+    .nav{gap:10px}
+    .nav button{width:38px;height:38px;font-size:16px}
+    .dots{gap:6px}
+    .nav .count{font-size:11px;min-width:44px}
+  }
 </style>
 </head>
 <body>
-<div class="topcap">AI007 · презентация для клиентов · ← → для листания</div>
+<div class="topcap">AI007 · презентация для клиентов · <span class="hint-d">← → для листания</span><span class="hint-m">свайп для листания</span></div>
 
 <section class="frame">
   <div class="bg"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
@@ -335,12 +399,16 @@
   const dotsWrap=document.getElementById('dots');
   let i=0;
   slides.forEach((_,n)=>{const d=document.createElement('span');d.className='dot'+(n===0?' on':'');d.onclick=()=>go(n);dotsWrap.appendChild(d);});
-  const dots=[...document.querySelectorAll('.dot')];
+  const dots=[...dotsWrap.querySelectorAll('.dot')];
   function go(n){i=(n+slides.length)%slides.length;slides.forEach((s,k)=>s.classList.toggle('active',k===i));dots.forEach((d,k)=>d.classList.toggle('on',k===i));
     const nn=String(i+1).padStart(2,'0');document.getElementById('pageno').textContent=nn+' / 10';document.getElementById('count').textContent=(i+1)+' / 10';}
   document.getElementById('next').onclick=()=>go(i+1);
   document.getElementById('prev').onclick=()=>go(i-1);
   addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='PageDown')go(i+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(i-1);});
+  let tx=0,ty=0;
+  const frame=document.querySelector('.frame');
+  frame.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+  frame.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)go(i+(dx<0?1:-1));},{passive:true});
   const tg=document.getElementById('tg'),tgl=document.getElementById('tgl');
   tg.onclick=()=>{const d=html.getAttribute('data-theme')==='dark';html.setAttribute('data-theme',d?'light':'dark');tgl.textContent=d?'light':'dark';};
 </script>
