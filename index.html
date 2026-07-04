@@ -159,6 +159,9 @@
   .clink:hover{border-color:var(--purple);transform:translateY(-2px)}
   .clink .ic{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:rgba(139,47,232,.12);color:var(--purple);display:flex;align-items:center;justify-content:center}
   .clink .ic svg{width:22px;height:22px}
+  .clink.tg{justify-content:center}
+  .clink.tg .ic{width:64px;height:64px}
+  .clink.tg .ic svg{width:30px;height:30px}
   .clink .cl{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
   .clink .cv{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:20px;color:var(--ink);margin-top:4px}
 
@@ -228,6 +231,8 @@
     .clink{padding:4.5vh 34px}
     .clink .ic{width:clamp(48px,7vh,60px);height:clamp(48px,7vh,60px)}
     .clink .ic svg{width:clamp(22px,3.2vh,27px);height:clamp(22px,3.2vh,27px)}
+    .clink.tg .ic{width:clamp(64px,9vh,78px);height:clamp(64px,9vh,78px)}
+    .clink.tg .ic svg{width:clamp(30px,4.2vh,36px);height:clamp(30px,4.2vh,36px)}
     .clink .cl{font-size:clamp(10px,1.6vh,12px)}
     .clink .cv{font-size:clamp(19px,3.2vh,26px)}
   }
@@ -321,7 +326,7 @@
       <p class="sub">AI007 — внедряем ИИ в процессы. Меньше ручного труда — больше времени на развитие.</p>
       <div class="cta">
         <a href="#contact" class="btn p">Получить бесплатный аудит</a>
-        <a href="tg://user?id=8654021995" class="btn o">Написать в Telegram</a>
+        <a href="https://t.me/ai007_agent" target="_blank" rel="noopener" class="btn o">Написать в Telegram</a>
       </div>
     </div>
   </section>
@@ -459,9 +464,8 @@
       <div class="rv"><span class="kick"><span class="d"></span>09 · Контакты</span>
       <h2>Свяжитесь с нами сегодня.</h2></div>
       <div class="clinks rv">
-        <a class="clink" href="tg://user?id=8654021995">
+        <a class="clink tg" href="https://t.me/ai007_agent" target="_blank" rel="noopener" aria-label="Написать в Telegram">
           <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.4 18.9 19c-.2 1-.8 1.2-1.6.8l-4.6-3.4-2.2 2.1c-.3.3-.5.5-.9.5l.3-4.6L18.3 6.9c.4-.3-.1-.5-.6-.2L7.4 13.2 3 11.8c-1-.3-1-1 .2-1.4l17.2-6.6c.8-.3 1.6.2 1.5.6z"/></svg></span>
-          <span><span class="cl">Telegram</span><span class="cv">id 8654021995</span></span>
         </a>
         <a class="clink" href="mailto:hello@ai007.io">
           <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
