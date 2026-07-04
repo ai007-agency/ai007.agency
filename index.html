@@ -9,6 +9,8 @@
 <meta property="og:description" content="Рутина, контроль, анализ — заберёт ИИ. Развитие — за вами. Первый шаг — бесплатный аудит.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ai007.agency/">
+<meta name="theme-color" content="#F5F3ED" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121323" media="(prefers-color-scheme: dark)">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{--purple:#8B2FE8;--paper:#F5F3ED;--ink:#16182B;--ghost:#E7E3DA;--muted:#8B8A99;--line:#E5E1D8;--surface:#FBFAF6;--sub:#5C5C6E;--hdr:rgba(245,243,237,.82)}
@@ -43,7 +45,7 @@
   .hero{position:relative;overflow:hidden;padding:150px 0 90px;min-height:88vh;display:flex;align-items:center}
   .bgfx{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
   main,footer{position:relative;z-index:1}
-  .blob{position:absolute;width:56%;height:64%;border-radius:50%;filter:blur(52px)}
+  .blob{position:absolute;width:56%;height:64%;border-radius:50%;filter:blur(52px);transform:translateZ(0);will-change:transform}
   .b1{background:radial-gradient(circle,rgba(168,85,247,.34),transparent 66%);left:-10%;top:-26%;animation:fl1 16s ease-in-out infinite}
   .b2{background:radial-gradient(circle,rgba(109,40,217,.28),transparent 66%);right:-12%;top:-16%;animation:fl2 20s ease-in-out infinite}
   .b3{background:radial-gradient(circle,rgba(139,47,232,.24),transparent 66%);left:26%;bottom:-34%;animation:fl3 18s ease-in-out infinite}
@@ -252,6 +254,17 @@
     section.tight{padding-top:0}
   }
 
+  /* очень узкие экраны */
+  @media (max-width:380px){
+    h1{font-size:27px}
+    h2{font-size:23px}
+    .hsrc{font-size:10px;padding:2px 6px}
+    .hrole{font-size:10px;padding:3px 7px}
+    .hrole .ac{font-size:8.5px}
+    .hcore{font-size:8px;width:66px}
+    .hdr .btn{padding:8px 13px;font-size:12px}
+  }
+
   /* появление при скролле */
   .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
   .rv.vis{opacity:1;transform:none}
@@ -272,7 +285,7 @@
     .tg span:last-child{display:none}
     section{padding:64px 0}
     .band{padding:64px 0}
-    .hero{padding:120px 0 64px;min-height:auto}
+    .hero{padding:100px 0 56px;min-height:100svh}
     .hero .cta .btn{width:100%}
     .cards{margin-top:26px;gap:10px}
     .g2{grid-template-columns:1fr}
