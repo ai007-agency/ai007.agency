@@ -41,7 +41,8 @@
 
   /* ===== hero ===== */
   .hero{position:relative;overflow:hidden;padding:150px 0 90px;min-height:88vh;display:flex;align-items:center}
-  .hero .bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .bgfx{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  main,footer{position:relative;z-index:1}
   .blob{position:absolute;width:56%;height:64%;border-radius:50%;filter:blur(52px)}
   .b1{background:radial-gradient(circle,rgba(168,85,247,.34),transparent 66%);left:-10%;top:-26%;animation:fl1 16s ease-in-out infinite}
   .b2{background:radial-gradient(circle,rgba(109,40,217,.28),transparent 66%);right:-12%;top:-16%;animation:fl2 20s ease-in-out infinite}
@@ -71,7 +72,11 @@
   .card.feat p{color:#fff}
 
   /* тёмная полоса — три тезиса */
-  .band{background:#0b0c17;color:#fff;padding:96px 0}
+  .band{background:#0b0c17;color:#fff;padding:96px 0;position:relative;overflow:hidden}
+  .band .wrap{position:relative;z-index:2}
+  .band .bb1,.band .bb2{position:absolute;width:58%;height:70%;border-radius:50%;filter:blur(56px);pointer-events:none}
+  .band .bb1{background:radial-gradient(circle,rgba(139,47,232,.28),transparent 66%);left:-14%;top:-30%;animation:fl2 19s ease-in-out infinite}
+  .band .bb2{background:radial-gradient(circle,rgba(109,40,217,.22),transparent 66%);right:-16%;bottom:-36%;animation:fl3 23s ease-in-out infinite}
   .band h2{color:#fff}
   .band .kick{color:#c9b6f2}.band .kick .d{background:#c9b6f2}
   .tricols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:40px}
@@ -151,7 +156,7 @@
   .quote{margin-top:30px;font-style:italic;font-size:18px;color:var(--ink);max-width:820px;line-height:1.5}
 
   /* CTA ===== */
-  .fin{position:relative;overflow:hidden;background:var(--surface);border-top:1px solid var(--line)}
+  .fin{position:relative;overflow:hidden;border-top:1px solid var(--line)}
   .fin .ghost10{position:absolute;right:-10px;bottom:-60px;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(150px,22vw,280px);line-height:.7;color:var(--ghost);transition:color .5s;z-index:0;pointer-events:none}
   .fin .wrap{position:relative;z-index:2}
   .clinks{display:flex;gap:18px;margin-top:36px;max-width:860px}
@@ -300,6 +305,8 @@
 </head>
 <body>
 
+<div class="bgfx" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
 <header class="hdr">
   <div class="in">
     <a href="#top" class="logo">AI<span class="z">0</span><span class="z">0</span>7</a>
@@ -319,7 +326,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="bg"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
     <div class="wrap">
       <div class="ghost">AI007<span class="dot"></span></div>
       <h1>Рутина, контроль, анализ — заберёт ИИ. Развитие — за вами.</h1>
@@ -347,6 +353,7 @@
 
   <!-- 02 ПОЧЕМУ СЕЙЧАС -->
   <div class="band">
+    <span class="bb1" aria-hidden="true"></span><span class="bb2" aria-hidden="true"></span>
     <div class="wrap">
       <div class="rv"><span class="kick"><span class="d"></span>02 · Почему сейчас</span>
       <h2>ИИ не заменит вас. Вас заменит тот, <span style="white-space:nowrap">кто его уже использует.</span></h2></div>
