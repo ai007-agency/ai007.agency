@@ -329,7 +329,7 @@
     .wrap{padding:0 18px}
     .hdr .in{padding:0 18px;height:58px;gap:14px}
     .menu{display:none}
-    .tg span:last-child{display:none}
+    .hdr .tg span:last-child{display:none}
     section{padding:64px 0}
     .band{padding:64px 0}
     .hero{padding:100px 0 56px;min-height:100svh}
@@ -371,6 +371,13 @@
     .cnode .cdot{position:absolute;left:-30px;top:3px;margin:0}
     .cnode .cttl{margin:0 0 4px}
     .promise{grid-template-columns:1fr;gap:12px;padding:20px 22px}
+  }
+  /* мобилка: один экран на скролл (снап по секциям) */
+  @media (max-width:1000px){
+    html{scroll-snap-type:y proximity}
+    main>section, main>.band{min-height:100svh;scroll-snap-align:start}
+    main>section{display:flex;flex-direction:column;justify-content:center}
+    main>section.tight{padding-top:72px;padding-bottom:48px}
   }
 </style>
 </head>
