@@ -123,6 +123,18 @@
   .bc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
   .bc .bi{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(139,47,232,.14);color:var(--purple);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
   .bc p{font-size:13.5px;line-height:1.45;color:var(--ink)}
+  /* 03 · Как работаем — горизонтальная цепочка (без цифр) */
+  .chain{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;position:relative}
+  .chain::before{content:"";position:absolute;top:8px;left:12.5%;right:12.5%;height:3px;border-radius:3px;background:linear-gradient(90deg,#8B2FE8,#A855F7,#6D28D9,#16182B)}
+  .cnode{text-align:center;padding:0 18px}
+  .cnode .cdot{width:19px;height:19px;border-radius:50%;background:var(--pc);margin:0 auto;box-shadow:0 0 0 5px var(--paper)}
+  .cnode .cttl{font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:21px;margin:20px 0 8px;color:var(--ink)}
+  .cnode .ctxt{font-size:14px;line-height:1.5;color:var(--sub)}
+  html[data-theme="dark"] .cnode:nth-child(4) .cdot{background:#C9B6F2}
+  html[data-theme="dark"] .chain::before{background:linear-gradient(90deg,#8B2FE8,#A855F7,#7C4DD6,#C9B6F2)}
+  .promise{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;background:linear-gradient(135deg,#A855F7,#6D28D9);border-radius:16px;padding:22px 26px}
+  .promise span{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.45;color:#fff}
+  .promise span::before{content:"\2713";font-weight:700;color:#fff;flex-shrink:0}
 
   /* возможности продаж */
   .spec{margin-top:36px;font-family:'JetBrains Mono',monospace}
@@ -419,17 +431,17 @@
     <div class="wrap">
       <div class="rv"><span class="kick"><span class="d"></span>03 · Как работаем</span>
       <h2>Запускаем ИИ в вашем бизнесе под ключ.</h2></div>
-      <div class="ccards rv">
-        <div class="cc feat"><span class="cn">шаг 1</span><div class="ch">Аудит</div><div class="cp">вместе находим узкие места: что съедает время и деньги.</div></div>
-        <div class="cc"><span class="cn">шаг 2</span><div class="ch">Пилот</div><div class="cp">запускаем на одном процессе, показываем результат.</div></div>
-        <div class="cc"><span class="cn">шаг 3</span><div class="ch">Внедрение</div><div class="cp">масштабируем на весь бизнес.</div></div>
-        <div class="cc"><span class="cn">шаг 4</span><div class="ch">Поддержка</div><div class="cp">дообучаем агентов, развиваем.</div></div>
+      <div class="chain rv">
+        <div class="cnode" style="--pc:#8B2FE8"><div class="cdot"></div><div class="cttl">Аудит</div><div class="ctxt">вместе находим узкие места: что съедает время и деньги.</div></div>
+        <div class="cnode" style="--pc:#A855F7"><div class="cdot"></div><div class="cttl">Пилот</div><div class="ctxt">запускаем на одном процессе, показываем результат.</div></div>
+        <div class="cnode" style="--pc:#6D28D9"><div class="cdot"></div><div class="cttl">Внедрение</div><div class="ctxt">масштабируем на весь бизнес.</div></div>
+        <div class="cnode" style="--pc:#16182B"><div class="cdot"></div><div class="cttl">Поддержка</div><div class="ctxt">дообучаем агентов, развиваем.</div></div>
       </div>
-      <div class="bcards rv">
-        <div class="bc"><span class="bi">✓</span><p>Дешевле классической IT-разработки в разы</p></div>
-        <div class="bc"><span class="bi">✓</span><p>Запуск за недели</p></div>
-        <div class="bc"><span class="bi">✓</span><p>Мы настраиваем, обучаем и поддерживаем</p></div>
-        <div class="bc"><span class="bi">✓</span><p>Полный контроль остаётся у вас</p></div>
+      <div class="promise rv">
+        <span>Дешевле классической IT-разработки в разы</span>
+        <span>Запуск за недели</span>
+        <span>Мы настраиваем, обучаем и поддерживаем</span>
+        <span>Полный контроль остаётся у вас</span>
       </div>
     </div>
   </section>
