@@ -101,7 +101,7 @@
   .tcol .tn{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:30px;opacity:.5;display:block;margin-bottom:14px}
   .tcol p{font-size:15.5px;line-height:1.5}
   .band.band-rows{padding:0;display:flex;flex-direction:column;justify-content:flex-start}
-  .band-rows .band-head{padding:clamp(84px,11vh,112px) 0 30px}
+  .band-rows .band-head{padding-top:clamp(84px,11vh,112px);padding-bottom:30px}
   .rows{display:flex;flex-direction:column;flex:1;width:100%;position:relative;z-index:2}
   .rrow{background:var(--cbg);color:var(--cfg);flex:1 1 0;min-height:120px;display:flex;align-items:center;gap:34px;padding:24px clamp(24px,6vw,90px)}
   .rrow .rn{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,56px);opacity:.5;flex-shrink:0;width:1.7em;line-height:1}
@@ -360,6 +360,17 @@
     .clink{padding:18px 20px}
     .clink .cv{font-size:18px}
     .fin .ghost10{font-size:120px;bottom:-26px}
+  }
+  /* === мобильная адаптация новых блоков === */
+  @media (max-width:700px){
+    .chain{grid-template-columns:1fr;margin-top:26px;padding-left:30px}
+    .chain::before{top:6px;bottom:6px;left:8px;right:auto;width:3px;height:auto;border-radius:3px;background:linear-gradient(180deg,#8B2FE8,#A855F7,#6D28D9,#16182B)}
+    html[data-theme="dark"] .chain::before{background:linear-gradient(180deg,#8B2FE8,#A855F7,#7C4DD6,#C9B6F2)}
+    .cnode{text-align:left;padding:0 0 20px;position:relative}
+    .cnode:last-child{padding-bottom:0}
+    .cnode .cdot{position:absolute;left:-30px;top:3px;margin:0}
+    .cnode .cttl{margin:0 0 4px}
+    .promise{grid-template-columns:1fr;gap:12px;padding:20px 22px}
   }
 </style>
 </head>
