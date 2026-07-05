@@ -86,6 +86,12 @@
   .tcol{background:var(--cbg);color:var(--cfg);padding:32px 30px;border-radius:16px}
   .tcol .tn{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:30px;opacity:.5;display:block;margin-bottom:14px}
   .tcol p{font-size:15.5px;line-height:1.5}
+  .band.band-rows{padding:0;display:flex;flex-direction:column;justify-content:flex-start}
+  .band-rows .band-head{padding:clamp(84px,11vh,112px) 0 30px}
+  .rows{display:flex;flex-direction:column;flex:1;width:100%;position:relative;z-index:2}
+  .rrow{background:var(--cbg);color:var(--cfg);flex:1 1 0;min-height:120px;display:flex;align-items:center;gap:34px;padding:24px clamp(24px,6vw,90px)}
+  .rrow .rn{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(30px,4.4vw,56px);opacity:.5;flex-shrink:0;width:1.7em;line-height:1}
+  .rrow p{font-size:clamp(15px,1.5vw,21px);line-height:1.4;max-width:60ch}
 
   /* этапы */
   .ccards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
@@ -380,16 +386,16 @@
   </section>
 
   <!-- 02 ПОЧЕМУ СЕЙЧАС -->
-  <div class="band">
+  <div class="band band-rows">
     <span class="bb1" aria-hidden="true"></span><span class="bb2" aria-hidden="true"></span>
-    <div class="wrap">
+    <div class="wrap band-head">
       <div class="rv"><span class="kick"><span class="d"></span>02 · Почему сейчас</span>
       <h2>ИИ не заменит вас. Вас заменит тот, <span style="white-space:nowrap">кто его уже использует.</span></h2></div>
-      <div class="tricols rv">
-        <div class="tcol" style="--cbg:#ECE6FB;--cfg:#16182B"><span class="tn">01</span><p>Пока вы думаете — конкуренты режут затраты и обгоняют вас по скорости и эффективности.</p></div>
-        <div class="tcol" style="--cbg:#6D28D9;--cfg:#FFFFFF"><span class="tn">02</span><p>ИИ-агенты берут на себя работу целой команды. 24/7, без выходных и отпусков.</p></div>
-        <div class="tcol" style="--cbg:#1E2138;--cfg:#FFFFFF"><span class="tn">03</span><p>Без ИИ и с ИИ — как считать на счётах или на компьютере. Скорость несравнима.</p></div>
-      </div>
+    </div>
+    <div class="rows rv">
+      <div class="rrow" style="--cbg:#ECE6FB;--cfg:#16182B"><span class="rn">01</span><p>Пока вы думаете — конкуренты режут затраты и обгоняют вас по скорости и эффективности.</p></div>
+      <div class="rrow" style="--cbg:#6D28D9;--cfg:#FFFFFF"><span class="rn">02</span><p>ИИ-агенты берут на себя работу целой команды. 24/7, без выходных и отпусков.</p></div>
+      <div class="rrow" style="--cbg:#1E2138;--cfg:#FFFFFF"><span class="rn">03</span><p>Без ИИ и с ИИ — как считать на счётах или на компьютере. Скорость несравнима.</p></div>
     </div>
   </div>
 
