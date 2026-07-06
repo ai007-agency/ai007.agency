@@ -30,6 +30,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Generate sitemap.xml (auto lastmod + discover pages)
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          {
+            echo '<?xml version="1.0" encoding="UTF-8"?>'
+            echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            echo "  <url><loc>https://ai007.agency/</loc><lastmod>${DATE}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>"
+            for f in *.html; do
+              case "$f" in index.html|presentation.html|preview_*|*МАКЕТ*) continue;; esac
+              echo "  <url><loc>https://ai007.agency/${f}</loc><lastmod>${DATE}</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>"
+            done
+            echo '</urlset>'
+          } > sitemap.xml
+          echo "sitemap.xml пересобран:"; cat sitemap.xml
+
       - name: Upload to Selectel S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_S3_ACCESS_KEY_ID }}
