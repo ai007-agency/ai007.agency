@@ -1,4 +1,4 @@
-# robots.txt — https://ai007.agency
+# robots.txt — https://www.ai007.agency
 User-agent: *
 Allow: /
 
@@ -20,4 +20,4 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-Sitemap: https://ai007.agency/sitemap.xml
+Sitemap: https://www.ai007.agency/sitemap.xml
