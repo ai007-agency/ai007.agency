@@ -3,6 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+/* First-visit language routing by browser language / saved choice (root only) */
+(function(){
+  var sup=['en','fr','es','zh'],stored=null,t=null;
+  try{stored=localStorage.getItem('ai007-lang');}catch(e){}
+  if(stored){ if(sup.indexOf(stored)>-1)t=stored; }
+  else{
+    var ls=(navigator.languages&&navigator.languages.length)?navigator.languages:[navigator.language||''];
+    for(var i=0;i<ls.length&&!t;i++){
+      var c=(ls[i]||'').toLowerCase();
+      if(c.indexOf('ru')===0){t=null;break;}
+      for(var j=0;j<sup.length;j++){ if(c.indexOf(sup[j])===0){t=sup[j];break;} }
+    }
+  }
+  if(t){ location.replace('/'+t+'/'); }
+})();
+</script>
+
 <title>AI007 — внедряем ИИ в бизнес под ключ</title>
 <meta name="description" content="AI007 внедряет ИИ-агентов в процессы бизнеса: аудит, пилот, внедрение, поддержка. Меньше ручного труда — больше времени на развитие. Первый шаг — бесплатный аудит.">
 <meta property="og:title" content="AI007 — внедряем ИИ в бизнес под ключ">
@@ -14,9 +32,19 @@
 <link rel="canonical" href="https://www.ai007.agency/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="AI007">
+<link rel="alternate" hreflang="ru" href="https://www.ai007.agency/">
+<link rel="alternate" hreflang="en" href="https://www.ai007.agency/en/">
+<link rel="alternate" hreflang="fr" href="https://www.ai007.agency/fr/">
+<link rel="alternate" hreflang="es" href="https://www.ai007.agency/es/">
+<link rel="alternate" hreflang="zh" href="https://www.ai007.agency/zh/">
+<link rel="alternate" hreflang="x-default" href="https://www.ai007.agency/">
 <meta name="yandex-verification" content="cbf830d660ee853b">
 <meta property="og:site_name" content="AI007">
 <meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:image" content="https://www.ai007.agency/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -397,6 +425,19 @@
     main>section{display:flex;flex-direction:column;justify-content:center}
     main>section.tight{padding-top:72px;padding-bottom:48px}
   }
+
+  /* ===== language switcher ===== */
+  .lang{position:relative;font-family:'JetBrains Mono',monospace}
+  .lang>summary{list-style:none;display:flex;align-items:center;gap:7px;border:1px solid var(--line);color:var(--sub);padding:7px 11px;border-radius:40px;cursor:pointer;font-size:11px;letter-spacing:.08em;transition:.2s;user-select:none;white-space:nowrap}
+  .lang>summary::-webkit-details-marker{display:none}
+  .lang>summary::marker{content:""}
+  .lang>summary:hover,.lang[open]>summary{border-color:var(--purple);color:var(--purple)}
+  .lang .gl{width:14px;height:14px;flex:0 0 auto}
+  .lang-list{position:absolute;top:calc(100% + 8px);right:0;min-width:158px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 14px 34px rgba(0,0,0,.14);display:flex;flex-direction:column;z-index:60}
+  .lang-list a{display:block;padding:9px 12px;border-radius:9px;font-family:'Inter',sans-serif;font-size:13.5px;color:var(--ink);transition:.15s}
+  .lang-list a:hover{background:var(--ghost);color:var(--purple)}
+  .lang-list a.on{color:var(--purple);font-weight:600}
+  @media (max-width:700px){.lang>summary{padding:6px 9px;gap:5px}}
 </style>
 <script type="application/ld+json">
 {
@@ -412,7 +453,7 @@
       "description": "Внедряем ИИ-агентов в процессы бизнеса под ключ: аудит, пилот, внедрение, поддержка.",
       "email": "hello@ai007.io",
       "sameAs": ["https://t.me/ai007_agent"],
-      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hello@ai007.io", "availableLanguage": ["Russian"] }
+      "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hello@ai007.io", "availableLanguage": ["Russian","English","French","Spanish","Chinese"] }
     },
     {
       "@type": "WebSite",
@@ -456,6 +497,16 @@
       <a href="#cases">Кейсы</a>
     </nav>
     <span class="sp"></span>
+    <details class="lang" id="lang">
+      <summary class="lang-cur" aria-label="Select language"><svg class="gl" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18"/></svg><span>RU</span></summary>
+      <div class="lang-list" role="menu">
+        <a href="/" hreflang="ru" lang="ru" class="on">Русский</a>
+        <a href="/en/" hreflang="en" lang="en">English</a>
+        <a href="/fr/" hreflang="fr" lang="fr">Français</a>
+        <a href="/es/" hreflang="es" lang="es">Español</a>
+        <a href="/zh/" hreflang="zh" lang="zh">中文</a>
+      </div>
+    </details>
     <span class="tg" id="tg"><span class="sw"></span><span id="tgl">light</span></span>
     <a href="#contact" class="btn p">Бесплатный аудит</a>
   </div>
@@ -660,6 +711,19 @@
   }else{
     document.querySelectorAll('.rv').forEach(el=>el.classList.add('vis'));
   }
+</script>
+<script>
+/* language memory + dropdown close */
+(function(){
+  var cur=document.documentElement.lang||'ru';
+  try{ if(!localStorage.getItem('ai007-lang')) localStorage.setItem('ai007-lang',cur); }catch(e){}
+  var links=document.querySelectorAll('.lang-list a');
+  for(var i=0;i<links.length;i++){
+    links[i].addEventListener('click',function(){ try{localStorage.setItem('ai007-lang',this.getAttribute('hreflang'));}catch(e){} });
+  }
+  var le=document.getElementById('lang');
+  if(le){document.addEventListener('click',function(e){ if(!le.contains(e.target)) le.removeAttribute('open'); });}
+})();
 </script>
 </body>
 </html>
