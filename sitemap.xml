@@ -1,63 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.ai007.agency/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ai007.agency/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ai007.agency/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ai007.agency/fr/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ai007.agency/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ai007.agency/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ai007.agency/"/>
-  </url>
-  <url>
-    <loc>https://www.ai007.agency/en/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ai007.agency/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ai007.agency/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ai007.agency/fr/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ai007.agency/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ai007.agency/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ai007.agency/"/>
-  </url>
-  <url>
-    <loc>https://www.ai007.agency/fr/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ai007.agency/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ai007.agency/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ai007.agency/fr/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ai007.agency/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ai007.agency/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ai007.agency/"/>
-  </url>
-  <url>
-    <loc>https://www.ai007.agency/es/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ai007.agency/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ai007.agency/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ai007.agency/fr/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ai007.agency/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ai007.agency/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ai007.agency/"/>
-  </url>
-  <url>
-    <loc>https://www.ai007.agency/zh/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.ai007.agency/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.ai007.agency/en/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.ai007.agency/fr/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.ai007.agency/es/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://www.ai007.agency/zh/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.ai007.agency/"/>
   </url>
 </urlset>
